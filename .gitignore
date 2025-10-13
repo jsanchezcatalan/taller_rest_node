@@ -1,0 +1,81 @@
+# Archivo .gitignore generado para el taller Node REST MySQL (no subir dependencias ni configuraciones locales)
+# === DEPENDENCIAS ===
+node_modules/
+package-lock.json
+
+# === VARIABLES DE ENTORNO ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === LOGS Y ERRORES ===
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === SALIDA DE COMPILACIÓN ===
+dist/
+build/
+coverage/
+.cache/
+.tmp/
+
+# === SISTEMAS OPERATIVOS ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# === VISUAL STUDIO CODE ===
+.vscode/
+.history/
+*.code-workspace
+
+# === BACKUPS Y ARCHIVOS TEMPORALES ===
+*.bak
+*.tmp
+*.swp
+*.swo
+*.orig
+
+# === TESTS / UTILIDADES ===
+__tests__/
+test-output/
+coverage/
+
+# === EXPORTS / REPORTES ===
+*.zip
+*.tar.gz
+*.tgz
+*.sql
+*.csv
+
+# === ENTORNOS DOCKER / DEV ===
+docker-compose.override.yml
+.docker/
+*.pid
+
+# === BASES DE DATOS LOCALES ===
+*.db
+*.sqlite
+
+# === DATOS DE XAMPP / LOCALHOST ===
+xampp/
+htdocs/
+mysql/
+phpmyadmin/
+
+# === ARCHIVOS PRIVADOS ===
+README_PERSONAL.md
+notes.txt
+secrets.txt
