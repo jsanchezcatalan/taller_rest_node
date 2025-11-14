@@ -1,4 +1,4 @@
-import * as service from "../services/products.service.js";
+import * as service from "../services/products.service.js";// Importar las funciones del servicio de productos
 
 export async function getAllProducts(req, res) {
   try {
@@ -11,7 +11,7 @@ export async function getAllProducts(req, res) {
 
 export async function getProductById(req, res) {
   const id = parseInt(req.params.id);
-  if (isNaN(id)) return res.status(400).json({ error: "ID inválido" });
+  if (isNaN(id)) return res.status(400).json({ error: "ID inválido" });// Validar que el ID sea un número
   const product = await service.getProductById(id);
   product
     ? res.json(product)
@@ -20,7 +20,7 @@ export async function getProductById(req, res) {
 
 export async function createProduct(req, res) {
   const { name, price, stock = 0, sku = null } = req.body;
-  if (!name || typeof price !== "number")
+  if (!name || typeof price !== "number")// Validar campos obligatorios
     return res.status(400).json({ error: "Campos inválidos" });
   try {
     const id = await service.createProduct({ name, price, stock, sku });
@@ -39,7 +39,7 @@ export async function updateProduct(req, res) {
 
 export async function updatePartialProduct(req, res) {
   const id = parseInt(req.params.id);
-  const ok = await service.updatePartialProduct(id, req.body);
+  const ok = await service.updatePartialProduct(id, req.body);// Llamar al servicio para actualizar parcialmente el producto
   ok ? res.json({ message: "Producto modificado parcialmente" }) : res.status(404).json({ error: "No encontrado" });
 }
 
